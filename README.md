@@ -42,7 +42,7 @@ Note: If you are not using ARC in your project, add `-fobjc-arc` as a compiler f
 Usage
 ==========
 
-* Init in two modes:
+Init with two modes:
 
 - First mode (just init):
 ``` objective-c
