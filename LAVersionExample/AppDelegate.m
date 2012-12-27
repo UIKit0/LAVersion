@@ -2,13 +2,14 @@
 //  AppDelegate.m
 //  LAVersionExample
 //
-//  Created by Mac2-Get-app on 27/12/12.
+//  Created by Luis Ascorbe on 27/12/12.
 //  Copyright (c) 2012 Luis Ascorbe. All rights reserved.
 //
 
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+//#import "LAVersion.h"
 
 @implementation AppDelegate
 
@@ -49,6 +50,9 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    // check if there is a new version
+    //[[[LAVersion alloc] init] autorelease];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
