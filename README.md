@@ -1,4 +1,4 @@
-LAAnimatedGrid
+LAVersion
 ==========
 
 Luis Ascorbe
@@ -55,8 +55,6 @@ Usage
     laVersion.delegate = self;
 ```
 
-NOTE: `LAAnimatedGrid` support rotations and the array could be UIImages or NSURLs (to web images).
-
 
 Actions
 ==========
@@ -74,7 +72,7 @@ Mattt Thompson and Scott Raymond creators of [AFNetworking](https://github.com/A
 License
 =======
 
-`LASharekit` is distributed under the terms and conditions of the MIT license. 
+`LAVersion` is distributed under the terms and conditions of the MIT license. 
 
 Copyright (c) 2012 Luis Ascorbe
 
