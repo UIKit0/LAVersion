@@ -1,6 +1,6 @@
 //
 //  LAVersion.m
-//  AytoLog
+//  LAVersion
 //
 //  Created by Luis Ascorbe on 21/12/12.
 //  Copyright (c) 2012 Luis Ascorbe. All rights reserved.
@@ -53,12 +53,23 @@
 
 @implementation LAVersion
 
+static LAVersion *sharedInstance = nil;
+
++ (LAVersion *)sharedInstance
+{
+	if (sharedInstance == nil)
+    {
+		sharedInstance = [[self alloc] init];
+	}
+	return sharedInstance;
+}
+
 - (id)init
 {
     self = [super init];
     if (self)
     {
-        [self checkAppVersion:YES];
+        //[self checkAppVersion:YES];
     }
     return self;
 }
@@ -97,7 +108,7 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
         success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-            NSLog(@"JSON LAVersion: %@", JSON);
+            //NSLog(@"JSON LAVersion: %@", JSON);
         
             NSDictionary *dicJSON = [NSDictionary dictionaryWithDictionary:JSON];
             NSArray *arrResultados = [NSArray arrayWithArray:[dicJSON objectForKey:@"results"]];
@@ -132,6 +143,19 @@
                                                                       cancelButtonTitle:NSLocalizedString(@"No, thanks", @"")
                                                                       otherButtonTitles:NSLocalizedString(@"Update", @""), nil];
                             [alertView show];
+#if !__has_feature(objc_arc)
+                            [alertView release];
+#endif
+                        }
+                        else
+                        {
+#if !__has_feature(objc_arc)
+                            if (sharedInstance)
+                            {
+                                [sharedInstance release];
+                                sharedInstance = nil;
+                            }
+#endif
                         }
                     }
                     else
@@ -174,6 +198,15 @@
             [self.delegate laVersionUpdateButtonTapped:self];
         }
     }
+    
+#if !__has_feature(objc_arc)
+    if (sharedInstance)
+    {
+        [sharedInstance release];
+        sharedInstance = nil;
+    }
+#endif
 }
+
 
 @end

@@ -1,6 +1,6 @@
 //
 //  LAVersion.h
-//  AytoLog
+//  LAVersion
 //
 //  Created by Luis Ascorbe on 21/12/12.
 //  Copyright (c) 2012 Luis Ascorbe. All rights reserved.
@@ -36,7 +36,10 @@
 @property (nonatomic, assign) id<LAVersionDelegate> delegate;
 
 // show an alertview or not (default is YES)
-- (id) initShowMessage:(BOOL)showMessage;
+- (id) initShowMessage:(BOOL)showMessage __attribute__((deprecated)); // initShowMessage is deprecated, you should use 'sharedInstance' instead, and then call to checkAppVersion:
+
+// get the shared instance of LAVersion
++ (LAVersion *)sharedInstance;
 // method to check if there is a new version available
 - (void) checkAppVersion:(BOOL)showMessage;
 

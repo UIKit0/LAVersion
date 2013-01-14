@@ -44,16 +44,18 @@ Usage
 
 Init with two modes:
 
-- First mode (just init):
+- First mode (just check for new version):
 ``` objective-c
-    [[LAVersion alloc] init];
+    [[LAVersion sharedInstance] checkAppVersion:YES];
 ```
 
-- Second mode (init and delegate):
+- Second mode (delegate):
 ``` objective-c
-    laVersion = [[LAVersion alloc] initShowMessage:YES]; // you could use just 'init' here too
+    laVersion = [LAVersion sharedInstance];
     laVersion.delegate = self;
+    [laVersion checkAppVersion:YES];
 ```
+NOTE: using `sharedInstance` you don't need to release it
 
 
 Actions

@@ -28,12 +28,13 @@
     // this example uses the AndryBirds's bundleID to show how it works.
     
     // check if there is a new version
-    // First mode
-    //[[LAVersion alloc] init];
+    // do:
+    //laVersion = [LAVersion sharedInstance];
+    //laVersion.delegate = self;
+    //[laVersion checkAppVersion:YES];
     
-    // Second mode (with delegate method)
-    laVersion = [[LAVersion alloc] initShowMessage:YES];
-    laVersion.delegate = self;
+    // or:
+    [[LAVersion sharedInstance] checkAppVersion:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,7 +46,8 @@
 #if !__has_feature(objc_arc)
 - (void)dealloc
 {
-    [laVersion release];
+    // do:
+    //[laVersion release];
     
     [super dealloc];
 }
