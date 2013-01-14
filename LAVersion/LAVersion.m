@@ -127,7 +127,7 @@
                             NSString *releaseNotes = [dicDatosApp objectForKey:@"releaseNotes"];
                             
                             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"New Version! \n What's new:", @"")
-                                                                                message:[NSString stringWithFormat:NSLocalizedString(@"%@", @""), releaseNotes]
+                                                                                message:releaseNotes //[NSString stringWithFormat:NSLocalizedString(@"%@ \n\n Do you want update now?", @""), releaseNotes]
                                                                                delegate:self
                                                                       cancelButtonTitle:NSLocalizedString(@"No, thanks", @"")
                                                                       otherButtonTitles:NSLocalizedString(@"Update", @""), nil];
