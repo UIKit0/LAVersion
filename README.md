@@ -7,6 +7,8 @@ Tweet me [@LuisEAM](http://twitter.com/luiseam)
 
 `LAVersion` automatically check if there is a new version for your app in the App Store.
 
+Of course, I'll love to hear your using my control in your app, you can contact me (<devlascorbe@gmail.com>) anytime
+
 ![Screenshot of LAVersion](https://raw.github.com/Lascorbe/LAVersion/master/captura.png  "LAVersion Screenshot")
 
 
